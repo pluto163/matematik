@@ -1,5 +1,5 @@
 http = require("http")
-url = requires("url")
+url = require("url")
 
 http.createServer((req,res)=>{
  res.end("hello world")
