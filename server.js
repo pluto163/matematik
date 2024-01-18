@@ -2,16 +2,7 @@ const http = require("http")
 const url = require("url")
 const port = process.env.PORT || 3030
 const fs = require("fs")
-
 console.log("started")
-
-function removeSlashes(str) {
-    if (str.charAt(0) === '/' && str.charAt(str.length - 1) === '/') {
-      return str.slice(1, -1);
-    } else {
-      return str;
-    }
-  }
  
 http.createServer((req,res)=>{
     console.log("connection")
@@ -32,23 +23,64 @@ http.createServer((req,res)=>{
             
         })
     }
-    
-    else{
-        fs.access(removeSlashes(pathName),fs.constants.F_OK,(err)=>{
+    else if(pathName == "/script.js"){
+        fs.readFile("script.js",(err,data)=>{
             if(err){console.log(err)}
+
             else{
-                fs.readFile(String(pathName),(err,data)=>{
-                    if(err){console.log(err)}
-        
-                    else{
-                    res.writeHead(200, {})
-                    res.write(data)
-                    res.end()
-                    }
-        
-                    
-                })
+            res.writeHead(200, {
+                "Content-Type":"javascript"
+            })
+            res.write(data)
+            res.end()
             }
+
+            
+        })
+    }
+    else if(pathName == "/styles.css"){
+        fs.readFile("styles.css",(err,data)=>{
+            if(err){console.log(err)}
+
+            else{
+            res.writeHead(200, {
+                
+            })
+            res.write(data)
+            res.end()
+            }
+
+            
+        })
+    }
+    else if(pathName == "/home.svg"){
+        fs.readFile("home.svg",(err,data)=>{
+            if(err){console.log(err)}
+
+            else{
+            res.writeHead(200, {
+                
+            })
+            res.write(data)
+            res.end()
+            }
+
+            
+        })
+    }
+    else if(pathName == "/basic.html"){
+        fs.readFile("basic.html",(err,data)=>{
+            if(err){console.log(err)}
+
+            else{
+            res.writeHead(200, {
+                "Content-Type":"javascript"
+            })
+            res.write(data)
+            res.end()
+            }
+
+            
         })
     }
 
