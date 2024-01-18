@@ -1,4 +1,4 @@
-document.getElementById("input").addEventListener("keydown",(e)=>{
+document.getElementById("cebirInput").addEventListener("keydown",(e)=>{
     if(e.key == "Enter"){
         val = document.getElementById("input").value 
         document.getElementById("input").value = eval(val)
@@ -7,5 +7,5 @@ document.getElementById("input").addEventListener("keydown",(e)=>{
 })
 
 function sadelestir(){
-    
+
 }
