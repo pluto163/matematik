@@ -1,7 +1,7 @@
-document.getElementById("cebirInput").addEventListener("keydown",(e)=>{
+document.getElementById("basicInput").addEventListener("keydown",(e)=>{
     if(e.key == "Enter"){
-        val = document.getElementById("input").value 
-        document.getElementById("input").value = eval(val)
+        val = document.getElementById("basicInput").value 
+        document.getElementById("basicInput").value = eval(val)
 
     }
 })
