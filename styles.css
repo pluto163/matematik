@@ -82,4 +82,13 @@ body{
 
 }
 
+.signature{
+    color: var(--sc);
+    font-family: monospace;
+    font-size: medium;
+    margin-left:2vw;
+    position: fixed;
+    bottom: 1vh;    
+}
+
 
