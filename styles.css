@@ -85,10 +85,16 @@ body{
 .signature{
     color: var(--sc);
     font-family: monospace;
-    font-size: medium;
+    font-size: Large;
     margin-left:2vw;
     position: fixed;
     bottom: 1vh;    
+}
+
+.info{
+    margin: auto;
+    color: var(--sc);
+    margin-top: 2vh;
 }
 
 
