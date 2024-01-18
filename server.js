@@ -29,7 +29,7 @@ http.createServer((req,res)=>{
 
             else{
             res.writeHead(200, {
-                "Content-Type":"javascript"
+                "Content-Type":"text/javascript"
             })
             res.write(data)
             res.end()
@@ -44,7 +44,7 @@ http.createServer((req,res)=>{
 
             else{
             res.writeHead(200, {
-                
+                "Content-Type":"text/css"
             })
             res.write(data)
             res.end()
@@ -74,7 +74,7 @@ http.createServer((req,res)=>{
 
             else{
             res.writeHead(200, {
-                "Content-Type":"javascript"
+                "Content-Type":"text/html"
             })
             res.write(data)
             res.end()
@@ -89,7 +89,7 @@ http.createServer((req,res)=>{
 
             else{
             res.writeHead(200, {
-                "Content-Type":"html"
+                "Content-Type":"text/html"
             })
             res.write(data)
             res.end()
@@ -119,7 +119,7 @@ http.createServer((req,res)=>{
 
             else{
             res.writeHead(200, {
-                "Content-Type":"javascript"
+                "Content-Type":"text/html"
             })
             res.write(data)
             res.end()
@@ -127,6 +127,11 @@ http.createServer((req,res)=>{
 
             
         })
+    }
+
+    else{
+        res.writeHead(404)
+        res.end()
     }
 
 
