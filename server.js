@@ -2,7 +2,16 @@ const http = require("http")
 const url = require("url")
 const port = process.env.PORT || 3030
 const fs = require("fs")
+
 console.log("started")
+
+function removeSlashes(str) {
+    if (str.charAt(0) === '/' && str.charAt(str.length - 1) === '/') {
+      return str.slice(1, -1);
+    } else {
+      return str;
+    }
+  }
  
 http.createServer((req,res)=>{
     console.log("connection")
@@ -10,7 +19,6 @@ http.createServer((req,res)=>{
     console.log(pathName)
     if(pathName == "/"){
         fs.readFile("index.html",(err,data)=>{
-            console.log("reading")
             if(err){console.log(err)}
 
             else{
@@ -24,7 +32,27 @@ http.createServer((req,res)=>{
             
         })
     }
-    else{res.end("404 not found :'(")}
+    
+    else{
+        fs.access(removeSlashes(pathName),fs.constants.F_OK,(err)=>{
+            if(err){console.log(err)}
+            else{
+                fs.readFile(String(pathName),(err,data)=>{
+                    if(err){console.log(err)}
+        
+                    else{
+                    res.writeHead(200, {})
+                    res.write(data)
+                    res.end()
+                    }
+        
+                    
+                })
+            }
+        })
+    }
+
+    
 
     
 }).listen(port)
