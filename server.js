@@ -83,6 +83,52 @@ http.createServer((req,res)=>{
             
         })
     }
+    else if(pathName == "/cebir.html"){
+        fs.readFile("cebir.html",(err,data)=>{
+            if(err){console.log(err)}
+
+            else{
+            res.writeHead(200, {
+                "Content-Type":"html"
+            })
+            res.write(data)
+            res.end()
+            }
+
+            
+        })
+    }
+    else if(pathName == "/favicon.ico"){
+        fs.readFile("favicon.ico",(err,data)=>{
+            if(err){console.log(err)}
+
+            else{
+            res.writeHead(200, {
+                "Content-Type":"favicon"
+            })
+            res.write(data)
+            res.end()
+            }
+
+            
+        })
+    }
+    else if(pathName == "/grafik.html"){
+        fs.readFile("grafik.html",(err,data)=>{
+            if(err){console.log(err)}
+
+            else{
+            res.writeHead(200, {
+                "Content-Type":"javascript"
+            })
+            res.write(data)
+            res.end()
+            }
+
+            
+        })
+    }
+
 
     
 
