@@ -113,7 +113,7 @@ http.createServer((req,res)=>{
             
         })
     }
-    else if(pathName == "/grafikl"){
+    else if(pathName == "/grafik"){
         fs.readFile("grafik.html",(err,data)=>{
             if(err){console.log(err)}
 
