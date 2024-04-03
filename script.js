@@ -7,7 +7,7 @@ document.getElementById("basicInput").addEventListener("keydown",(e)=>{
 })
 
 function wolf(mode){
-    q=String(document.getElementById("basicInput").value)
+    q=String(document.getElementById("cebirInput").value)
 fetch("https://api.wolframalpha.com/v1/result?i="+q+"&appid=4TH5K5-H3TYYKYYPX")
         .then(response => response.text())
         .then(text => document.getElementById("basicInput").value = text)
