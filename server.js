@@ -141,7 +141,7 @@ http.createServer((req,res)=>{
         })
     }
 
-    else if(pathname == "/wolfram"){
+    else if(pathName == "/wolfram"){
         res.writeHead(200, {"Content-Type":"text/html"})
         res.write("YESS")
         res.end()
