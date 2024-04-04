@@ -7,8 +7,9 @@ document.getElementById("basicInput").addEventListener("keydown",(e)=>{
 })
 
 function wolf(mode){
+    console.log("cebirr")
     q=String(document.getElementById("cebirInput").value)
-    fetch("https://math-fr3d.onrender.com/wolfram?input="+q)
+    fetch("https://api.mathjs.org/v4/?expr="+q)
         .then(response => response.text())
         .then(text => document.getElementById("cebirİ").value = text)
     
