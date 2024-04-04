@@ -12,4 +12,4 @@ function wolf(mode){
         .then(response => response.text())
         .then(text => document.getElementById("cebirİ").value = text)
     
-        if(err){console.log(err)}}
+}
