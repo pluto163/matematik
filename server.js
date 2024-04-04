@@ -2,12 +2,24 @@ const http = require("http")
 const url = require("url")
 const port = process.env.PORT || 3030
 const fs = require("fs")
+const path = require("path")
 console.log("started")
  
 http.createServer((req,res)=>{
     console.log("connection on: "+String(req.socket.remoteAddress))
     var pathName = url.parse(req.url,true).pathname
     console.log(pathName)
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Request-Method', '*');
+	res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+	res.setHeader('Access-Control-Allow-Headers', '*');
+	if ( req.method === 'OPTIONS' ) {
+		res.writeHead(200);
+		res.end();
+		return;
+	}
+
     if(pathName == "/"){
         fs.readFile("index.html",(err,data)=>{
             if(err){console.log(err)}
@@ -128,6 +140,14 @@ http.createServer((req,res)=>{
             
         })
     }
+
+    else if(pathname == "/wolfram"){
+        res.writeHead(200, {"Content-Type":"text/html"})
+        res.write("YESS")
+        res.end()
+    }
+
+
 
     else{
         res.writeHead(404)

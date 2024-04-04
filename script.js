@@ -8,8 +8,8 @@ document.getElementById("basicInput").addEventListener("keydown",(e)=>{
 
 function wolf(mode){
     q=String(document.getElementById("cebirInput").value)
-fetch("https://api.wolframalpha.com/v1/result?i="+q+"&appid=4TH5K5-H3TYYKYYPX")
+    fetch("fr3d.onrender.com/wolfram?input="+q)
         .then(response => response.text())
-        .then(text => document.getElementById("basicInput").value = text)
+        .then(text => document.getElementById("cebirİ").value = text)
     
         if(err){console.log(err)}}
