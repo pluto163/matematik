@@ -65,8 +65,8 @@ http.createServer((req,res)=>{
             
         })
     }
-    else if(pathName == "/home.svg"){
-        fs.readFile("home.svg",(err,data)=>{
+    else if(pathName == "/home"){
+        fs.readFile("home.png",(err,data)=>{
             if(err){console.log(err)}
 
             else{
