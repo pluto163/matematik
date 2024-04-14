@@ -99,6 +99,6 @@ body{
 
 .center{
     margin: auto;
-    bottom: 3vh;
+    bottom: 3vh!important;
 }
 
