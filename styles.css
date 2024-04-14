@@ -100,8 +100,8 @@ body{
 .wolfram{
     color: var(--sc);
     font-family: monospace;
-    font-size: Large;
+    font-size: x-large;
     margin-left:2vw;
     position: fixed;
-    margin-bottom: 1ch;
+    bottom: 3vh;
 }
