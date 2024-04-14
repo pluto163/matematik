@@ -14,3 +14,7 @@ function wolf(mode){
         .then(text => document.getElementById("cebirInput").value = text)
     
 }
+
+function openWolfram(){
+    window.open("https://wolframalpha.com")
+}
