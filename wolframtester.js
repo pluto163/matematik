@@ -4,7 +4,7 @@ const prompt = require("prompt")
 prompt.start();
 
 prompt.get(["query"], (err, result)=>{
-    fetch("https://api.wolframalpha.com/v1/result?i="+result.query+"&appid=4TH5K5-H3TYYKYYPX")
+    fetch("https://www.wolframalpha.com/input?i=10*2")
         .then(response => response.text())
         .then(text => console.log(text))
     
